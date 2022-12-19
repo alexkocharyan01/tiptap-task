@@ -43,15 +43,6 @@ const Tiptap = ({user}) => {
     ],
   })
 
-
-  console.log(editor, 'provider');
-
-  // useEffect(() => {
-  //   websocketProvider.on('status', event => {
-  //     setStatus(event.status)
-  //   })
-  // }, [])
-
   return (
     <div className='textEditor'>
       <Menu editor={editor} />
