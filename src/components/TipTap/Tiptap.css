@@ -29,7 +29,7 @@
 .ProseMirror h6 {
   line-height: 1.1;
 }
- 
+
 .ProseMirror code {
   background-color: rgba(#616161, 0.1);
   color: #616161;
@@ -68,6 +68,9 @@
 
 .ProseMirror p {
   display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 40%;
 }
 
 .ProseMirror p span {

@@ -1,10 +1,12 @@
-import { useEditor, EditorContent } from '@tiptap/react'
-import StarterKit from '@tiptap/starter-kit'
+import { useEditor, EditorContent } from '@tiptap/react';
+import StarterKit from '@tiptap/starter-kit';
 import Collaboration from '@tiptap/extension-collaboration';
 import CollaborationCursor from '@tiptap/extension-collaboration-cursor';
-import * as Y from 'yjs'
+import * as Y from 'yjs';
 import { WebrtcProvider } from 'y-webrtc';
-import { HocuspocusProvider } from '@hocuspocus/provider'
+import { HocuspocusProvider } from '@hocuspocus/provider';
+import Mention from '@tiptap/extension-mention';
+import suggestion from '../../utils/suggestion';
 import Menu from '../Menu/Menu';
 import './Tiptap.css';
 
@@ -28,6 +30,12 @@ const Tiptap = ({user}) => {
     extensions: [
       StarterKit.configure({
         history: false,
+      }),
+      Mention.configure({
+        HTMLAttributes: {
+          class: 'mention',
+        },
+        suggestion,
       }),
       Collaboration.configure({
         document: ydoc
